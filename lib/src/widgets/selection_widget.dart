@@ -203,7 +203,8 @@ class SelectionWidgetState<T> extends State<SelectionWidget<T>> {
   Widget _multiSelectionValidation() {
     if (!widget.isMultiSelectionMode) return SizedBox.shrink();
 
-    Widget defaultValidation = Padding(
+    Widget defaultValidation = Container(
+      width: MediaQuery.sizeOf(context).width,
       padding: EdgeInsets.all(8),
       child: Align(
         alignment: Alignment.centerRight,

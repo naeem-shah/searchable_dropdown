@@ -203,20 +203,17 @@ class SelectionWidgetState<T> extends State<SelectionWidget<T>> {
   Widget _multiSelectionValidation() {
     if (!widget.isMultiSelectionMode) return SizedBox.shrink();
 
-    Widget defaultValidation = Container(
-      width: MediaQuery
-          .sizeOf(context)
-          .width,
+    Widget defaultValidation = Padding(
       padding: EdgeInsets.all(8),
       child: Align(
         alignment: Alignment.centerRight,
-        child: ElevatedButton(
+        child: TextButton(
           onPressed: _selectedItems.isEmpty ? null : onValidate,
           child: Text("${_selectedItems.length} selected"),
         ),
       ),
     );
-
+    
     if (widget.popupProps.validationWidgetBuilder != null) {
       return widget.popupProps.validationWidgetBuilder!(context, _selectedItems);
     }

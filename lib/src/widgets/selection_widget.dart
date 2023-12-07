@@ -185,7 +185,10 @@ class SelectionWidgetState<T> extends State<SelectionWidget<T>> {
                   ],
                 ),
               ),
-              _multiSelectionValidation(),
+             SizedBox(
+                width: MediaQuery.sizeOf(context).width,
+                child: _multiSelectionValidation(),
+              ),
             ],
           );
         });
@@ -207,7 +210,7 @@ class SelectionWidgetState<T> extends State<SelectionWidget<T>> {
       padding: EdgeInsets.all(8),
       child: Align(
         alignment: Alignment.centerRight,
-        child: TextButton(
+        child: ElevatedButton(
           onPressed: _selectedItems.isEmpty ? null : onValidate,
           child: Text("${_selectedItems.length} selected"),
         ),

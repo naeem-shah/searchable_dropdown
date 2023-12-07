@@ -185,8 +185,9 @@ class SelectionWidgetState<T> extends State<SelectionWidget<T>> {
                   ],
                 ),
               ),
-             Flexible(
-                fit: widget.popupProps.fit,
+              Container(
+                width: MediaQuery.maybeSizeOf(context)?.width,
+                padding: EdgeInsets.all(8),
                 child: _multiSelectionValidation(),
               ),
             ],
@@ -208,13 +209,10 @@ class SelectionWidgetState<T> extends State<SelectionWidget<T>> {
 
     Widget defaultValidation = Padding(
       padding: EdgeInsets.all(8),
-      child: Align(
-        alignment: Alignment.centerRight,
-        child: ElevatedButton(
+      child: ElevatedButton(
           onPressed: _selectedItems.isEmpty ? null : onValidate,
           child: Text("${_selectedItems.length} selected"),
         ),
-      ),
     );
     
     if (widget.popupProps.validationWidgetBuilder != null) {

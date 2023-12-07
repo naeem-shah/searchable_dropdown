@@ -186,7 +186,7 @@ class SelectionWidgetState<T> extends State<SelectionWidget<T>> {
                 ),
               ),
              SizedBox(
-                width: MediaQuery.sizeOf(context).width,
+                width: double.infinity,
                 child: _multiSelectionValidation(),
               ),
             ],

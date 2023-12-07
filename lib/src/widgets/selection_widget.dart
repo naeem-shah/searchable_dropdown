@@ -185,8 +185,8 @@ class SelectionWidgetState<T> extends State<SelectionWidget<T>> {
                   ],
                 ),
               ),
-             SizedBox(
-                width: double.infinity,
+             Flexible(
+                fit: widget.popupProps.fit,
                 child: _multiSelectionValidation(),
               ),
             ],
